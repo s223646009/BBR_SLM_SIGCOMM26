@@ -1,0 +1,7 @@
+1. First create your own conda env using the shared slm_env.yml
+2. Download the SLMs to your own workstation. I have shared the readme files of the downloaded SLMs/LLMs herewith for
+reference.
+3. Change the "llm_framework/config.py" plm_dir variable according to your download location
+4. You can find the experience pool data modified under "llm_framework/data/exp_pools" used for training and evaluation
+5. Use the "llm_framework/run_all.py" base on your requirement.
+    - Use "modes = ['adapt']" to train the models and "modes = ['eval']" to evaluate the trained models.

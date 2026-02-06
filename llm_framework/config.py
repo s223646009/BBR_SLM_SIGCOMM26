@@ -9,11 +9,12 @@ class Config:
     exp_pools_dir = data_dir + 'exp_pools/'
 
     # plm special
-    # plm_types = ['gpt2', 'llama', 'llava', 't5', 'opt', 'mistral']
-    plm_types = ['gpt2', 'llama2', 'llava', 't5', 'opt', 'mistral', 'llama3', 'deepseek', 'llama4', 'gemma3','qwen3','smollm2', 'pythia', 'gpt_neo']
+    plm_types = ['gpt2', 'llama2', 't5', 'llama3','smollm2', 'gpt_neo']
     plm_sizes = ['xxs', 'xs', 'small', 'base', 'large', 'xl', 'xxl']  # note that the actual size of plm is dependent on the type of plm. 
                                                          # for example, for llama, 'base' is 7b, while for gpt2, 'base' is 340M. you can specify it yourself.
-    plm_dir = _base_dir + ('d:\\Rakshitha De Silva\\downloaded_plms')
+
+    # plm_dir = _base_dir + path to your downloaded_plms
+    plm_dir = _base_dir + ('d:\downloaded_plms')
     plm_ft_dir = _base_dir + 'data/ft_plms'
     plm_embed_sizes = {
         'gpt2': {

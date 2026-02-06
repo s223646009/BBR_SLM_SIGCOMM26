@@ -1,0 +1,17 @@
+Step 0 - train_loss.item() 0.06946156173944473
+Step 0 - mean train loss  2.222770
+Step 1 - train_loss.item() 0.0652279481291771
+Step 2 - train_loss.item() 0.06461634486913681
+Step 3 - train_loss.item() 0.056480757892131805
+Step 4 - train_loss.item() 0.08012029528617859
+Step 5 - train_loss.item() 0.07454055547714233
+Step 6 - train_loss.item() 0.0662662461400032
+Step 7 - train_loss.item() 0.05893826484680176
+Step 8 - train_loss.item() 0.062452830374240875
+Step 9 - train_loss.item() 0.07576297223567963
+Step 10 - train_loss.item() 0.04525315761566162
+Step 11 - train_loss.item() 0.0477985255420208
+Step 12 - train_loss.item() 0.06865260004997253
+Step 13 - train_loss.item() 0.06351622194051743
+Step 14 - train_loss.item() 0.06755145639181137
+Step 15 - train_loss.item() 0.05951948091387749

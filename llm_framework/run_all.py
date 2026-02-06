@@ -9,29 +9,19 @@ def generate_command(plm_type, plm_size, mode='adapt', device='cuda:0', grad_acc
 plm_configurations = [
     ("t5", "base"),
     ("gpt2", "small"),
-    # ("gemma3", "base"),
-    # ("qwen3", "base"),
-    # ("llama4", "base"),
     ("smollm2", "base"),
     ("gpt_neo", "base"),
-    # ("pythia", "base"),
     ("llama3", "base")
 ]
 
 
-# # Modes for each experiment
-# modes = ['adapt','test','eval']
-
-
-
 
 # Modes for each experiment
-# modes = ['adapt','test']
-# modes = ['adapt']
+modes = ['adapt']
 # modes = ['test']
+# modes = ['eval']
 
-# Modes for evaluation
-modes = ['eval']
+
 
 # Generate all commands dynamically
 commands = [generate_command(plm_type, plm_size, mode)

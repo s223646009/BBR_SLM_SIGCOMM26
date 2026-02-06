@@ -165,10 +165,6 @@ def adapt(args, model, exp_dataset, exp_dataset_info, checkpoint_dir, best_model
     np.savetxt(train_losses_path, total_train_losses, fmt='%.6f', delimiter='\n')
 
 
-    # exp_pool_path = "./data/exp_pools/exp_pool_l4s_eval.pkl"
-    # exp_pool = pickle.load(open(exp_pool_path, 'rb'))
-    # evaluate_on_simulated_env(args, model, exp_pool , target_return, loss_fn, eval_process_reward_fn)
-
 
 def eval(args, model, exp_dataset_info, model_dir, result_dir, eval_process_reward_fn):
     # exp_pool_path = "./data/exp_pools/new_bbr_exp_pool_test.pkl"
@@ -237,9 +233,6 @@ def run(args):
     # 3. create training dataset, fetch info
     print("exp_pool_path",exp_pool_path)
     exp_pool = pickle.load(open(exp_pool_path, 'rb'))
-    # print(f'Load experience pool from {exp_pool_path}, size: {len(exp_pool)}')
-    # print("First 5 actions in the experience pool:", exp_pool.actions[:5])
-    # print("First 5 rewards in the experience pool:", exp_pool.rewards[:5])
     exp_dataset = ExperienceDataset(exp_pool, gamma=args.gamma, scale=args.scale, max_length=args.w, sample_step=args.sample_step)
     exp_dataset_info = Munch(exp_dataset.exp_dataset_info)
     print('Experience dataset info:')
@@ -334,11 +327,13 @@ if __name__ == '__main__':
     # training dataset settings
     parser.add_argument('--exp-pool-path', help='the path storing the experience pool file for training', default='data/exp_pools/exp_pool.pkl')
     parser.add_argument('--sample-step', type=int, help='the steps for sampling experiences')
+
     # environment settings
     parser.add_argument('--trace', help='name of traces (e.g., fcc-test)', type=str, default='fcc-test')
     parser.add_argument('--trace-num', help='number of traces. if set to -1, use all traces in the trace dir.', type=int, default=100)
     parser.add_argument('--video', help='name of video (e.g., video1)', type=str, default='video1')
     parser.add_argument('--fixed-order', action='store_true', help='iterate over test traces in a fixed sequential order.')
+
     # plm settings
     parser.add_argument('--plm-type', type=str, default='gpt2')
     parser.add_argument('--plm-size', type=str, default='base')
